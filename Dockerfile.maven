@@ -1,0 +1,6 @@
+FROM maven:3.8.4-openjdk-8 AS build
+COPY src  /Users/andre/OneDrive/Escritorio/Intelli/Nuwe/6529779a538c4c827e9c763c/src
+COPY pom.xml /Users/andre/OneDrive/Escritorio/Intelli/Nuwe/6529779a538c4c827e9c763c
+RUN mvn -f /Users/andre/OneDrive/Escritorio/Intelli/Nuwe/6529779a538c4c827e9c763c/pom.xml clean package
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","/Users/andre/OneDrive/Escritorio/Intelli/Nuwe/6529779a538c4c827e9c763c/target/accenture-techhub-0.0.1-SNAPSHOT.war"]
