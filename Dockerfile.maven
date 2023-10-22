@@ -18,7 +18,7 @@ RUN mvn test
 RUN mvn package
 
 # Segunda etapa: Crea una imagen con el servidor de aplicaciones Java y despliega la aplicación
-FROM tomcat:9.0-jdk8-corretto
+FROM tomcat:9.0-jdk11-corretto
 
 # Copia el archivo WAR de destino de la etapa de compilación al servidor de aplicaciones Tomcat
 COPY --from=build ./target/accenture-techhub-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
