@@ -1,0 +1,30 @@
+# Primera etapa: Construye y ejecuta las pruebas
+FROM maven:3.8.4-openjdk-8 AS build
+
+# Establece el directorio de trabajo en /app
+WORKDIR /app
+
+# Copia el archivo pom.xml y descarga las dependencias
+COPY pom.xml .
+RUN mvn dependency:go-offline
+
+# Copia el código fuente al contenedor
+COPY src ./src
+
+# Ejecuta las pruebas
+RUN mvn test
+
+# Compila la aplicación y empaquétala en un archivo WAR
+RUN mvn package
+
+# Segunda etapa: Crea una imagen con el servidor de aplicaciones Java y despliega la aplicación
+FROM tomcat:9.0-jdk8-corretto
+
+# Copia el archivo WAR de destino de la etapa de compilación al servidor de aplicaciones Tomcat
+COPY --from=build ./target/accenture-techhub-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+
+# Expone el puerto del servidor de aplicaciones (por defecto 8080)
+EXPOSE 8080
+
+# Comando para iniciar el servidor de aplicaciones Tomcat
+CMD ["catalina.sh", "run"]

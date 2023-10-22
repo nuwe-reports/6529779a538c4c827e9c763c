@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.repositories.*;
 import com.example.demo.entities.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/api")
 public class AppointmentController {
@@ -27,12 +27,12 @@ public class AppointmentController {
     AppointmentRepository appointmentRepository;
 
     @GetMapping("/appointments")
-    public ResponseEntity<List<Appointment>> getAllAppointments(){
+    public ResponseEntity<List<Appointment>> getAllAppointments() {
         List<Appointment> appointments = new ArrayList<>();
 
         appointmentRepository.findAll().forEach(appointments::add);
 
-        if (appointments.isEmpty()){
+        if (appointments.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
 
@@ -40,45 +40,107 @@ public class AppointmentController {
     }
 
     @GetMapping("/appointments/{id}")
-    public ResponseEntity<Appointment> getAppointmentById(@PathVariable("id") long id){
+    public ResponseEntity<Appointment> getAppointmentById(@PathVariable("id") long id) {
         Optional<Appointment> appointment = appointmentRepository.findById(id);
 
-        if (appointment.isPresent()){
-            return new ResponseEntity<>(appointment.get(),HttpStatus.OK);
-        }else {
+        if (appointment.isPresent()) {
+            return new ResponseEntity<>(appointment.get(), HttpStatus.OK);
+        } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @PostMapping("/appointment")
-    public ResponseEntity<List<Appointment>> createAppointment(@RequestBody Appointment appointment){
-        /** TODO 
-         * Implement this function, which acts as the POST /api/appointment endpoint.
-         * Make sure to check out the whole project. Specially the Appointment.java class
-         */
-        return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
+    public ResponseEntity<Appointment> createAppointment(@RequestBody Appointment appointment) {
+        // Verifica si la fecha de inicio y finalización son iguales, en ese caso devuelve un código de estado 400 (BadRequest).
+        if (appointment.getStartsAt().equals(appointment.getFinishesAt())) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        boolean hasDateConflict = hasDateConflict(appointment);
+        boolean hasRoomConflict = hasRoomConflict(appointment);
+
+        // Lógica para verificar conflictos de fecha con otras citas y habitaciones.
+        if (hasDateConflict) {
+            if (hasRoomConflict) {
+                return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+            } else {
+                // En caso de conflicto de fecha pero no de habitación, sigue adelante y crea la cita
+                Appointment createdAppointment = appointmentRepository.save(appointment);
+                return new ResponseEntity<>(createdAppointment, HttpStatus.OK);
+            }
+        } else {
+            if (hasRoomConflict) {
+                return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+            } else {
+                // Si no hay conflictos, guarda la cita
+                Appointment createdAppointment = appointmentRepository.save(appointment);
+                return new ResponseEntity<>(createdAppointment, HttpStatus.OK);
+            }
+        }
     }
 
+    // Resto de los métodos del controlador
+
+    private boolean hasDateConflict(Appointment newAppointment) {
+        // Obtén todas las citas existentes
+        List<Appointment> existingAppointments = appointmentRepository.findAll();
+
+        for (Appointment existingAppointment : existingAppointments) {
+            if (doAppointmentsConflict(newAppointment, existingAppointment)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean hasRoomConflict(Appointment newAppointment) {
+        // Obtén todas las citas existentes
+        List<Appointment> existingAppointments = appointmentRepository.findAll();
+
+        for (Appointment existingAppointment : existingAppointments) {
+            if (doAppointmentsHaveRoomConflict(newAppointment, existingAppointment)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean doAppointmentsConflict(Appointment newAppointment, Appointment existingAppointment) {
+        LocalDateTime newStartsAt = newAppointment.getStartsAt();
+        LocalDateTime newFinishesAt = newAppointment.getFinishesAt();
+        LocalDateTime existingStartsAt = existingAppointment.getStartsAt();
+        LocalDateTime existingFinishesAt = existingAppointment.getFinishesAt();
+
+        // Verifica si las fechas de la nueva cita se superponen con las fechas de la cita existente
+        return (newStartsAt.isBefore(existingFinishesAt) && newFinishesAt.isAfter(existingStartsAt));
+    }
+
+    private boolean doAppointmentsHaveRoomConflict(Appointment newAppointment, Appointment existingAppointment) {
+        Room newRoom = newAppointment.getRoom();
+        Room existingRoom = existingAppointment.getRoom();
+
+        // Verifica si ambas citas están programadas en la misma habitación
+        // Puedes comparar las habitaciones por nombre, ya que no puedes acceder a los ID
+        return newRoom.getRoomName().equals(existingRoom.getRoomName());
+    }
 
     @DeleteMapping("/appointments/{id}")
-    public ResponseEntity<HttpStatus> deleteAppointment(@PathVariable("id") long id){
-
+    public ResponseEntity<HttpStatus> deleteAppointment(@PathVariable("id") long id) {
         Optional<Appointment> appointment = appointmentRepository.findById(id);
 
-        if (!appointment.isPresent()){
+        if (!appointment.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
         appointmentRepository.deleteById(id);
-
         return new ResponseEntity<>(HttpStatus.OK);
-        
     }
 
     @DeleteMapping("/appointments")
-    public ResponseEntity<HttpStatus> deleteAllAppointments(){
+    public ResponseEntity<HttpStatus> deleteAllAppointments() {
         appointmentRepository.deleteAll();
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }

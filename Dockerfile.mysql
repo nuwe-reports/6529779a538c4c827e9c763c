@@ -1,0 +1,12 @@
+# Utiliza una imagen base oficial de MySQL
+FROM mysql:8.1
+
+# Establece las credenciales de acceso a la base de datos
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=accWe_hospital_db
+
+# Expone el puerto de MySQL
+EXPOSE 3306
+
+# Copia tu script SQL al directorio /docker-entrypoint-initdb.d/
+COPY accWe.sql /docker-entrypoint-initdb.d/
