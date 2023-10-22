@@ -1,5 +1,5 @@
 # Primera etapa: Construye y ejecuta las pruebas
-FROM maven:3.8.4-openjdk-8 AS build
+FROM maven:3.8.4-openjdk-11 AS build
 
 # Establece el directorio de trabajo en /app
 WORKDIR /app

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/andre/OneDrive/Escritorio/Intelli/Nuwe/6529779a538c4c827e9c763c/src</OriginalElement>
+  <nodes>
+    <node x="686.2405712042631" y="666.0750378929491">com.example.demo.RoomControllerUnitTest</node>
+    <node x="3615.528492754175" y="923.3495666459326">com.example.demo.AppointmentControllerUnitTest</node>
+    <node x="458.53748495505135" y="935.5200862094925">com.example.demo.TechhubApplication</node>
+    <node x="1388.588497431891" y="830.9096052472677">com.example.demo.repositories.RoomRepository</node>
+    <node x="1775.4925779797302" y="609.4214671262557">com.example.demo.DoctorControllerUnitTest</node>
+    <node x="3602.631841018809" y="564.77501158251">com.example.demo.entities.Doctor</node>
+    <node x="1390.0266938696855" y="482.7551108861726">com.example.demo.RoomJpaUnitTest</node>
+    <node x="3546.1387030156893" y="246.05964478489545">com.example.demo.entities.Person</node>
+    <node x="978.6439481658035" y="602.1529062544283">com.example.demo.controllers.RoomController</node>
+    <node x="4526.298034467462" y="605.151027501912">com.example.demo.EntityUnitTest</node>
+    <node x="4800.873563881825" y="354.3602847584591">com.example.demo.controllers.PatientController</node>
+    <node x="-124.67783382950199" y="903.2569709144647">com.example.demo.JacksonConfiguration</node>
+    <node x="3112.2296968739897" y="906.2763621790978">com.example.demo.controllers.AppointmentController</node>
+    <node x="426.68082982625526" y="749.5699489556806">com.example.demo.DemoApplicationTests</node>
+    <node x="4551.523314227983" y="304.2969907796103">com.example.demo.repositories.PatientRepository</node>
+    <node x="4874.923901359502" y="-14.127310673582969">com.example.demo.PatientJpaUnitTest</node>
+    <node x="1825.4880710516488" y="296.43036039823005">com.example.demo.controllers.DoctorController</node>
+    <node x="2075.9408323258413" y="543.3068778589081">com.example.demo.DoctorJpaUnitTest</node>
+    <node x="701.7295273403071" y="992.8512191838286">com.example.demo.ServletInitializer</node>
+    <node x="2600.811407719997" y="248.48389256547563">com.example.demo.entities.Room</node>
+    <node x="4424.162084939134" y="78.085299872648">com.example.demo.PatientControllerUnitTest</node>
+    <node x="4068.0006448719046" y="707.4620169186262">com.example.demo.entities.Appointment</node>
+    <node x="4203.200395211674" y="337.613712009822">com.example.demo.entities.Patient</node>
+    <node x="2893.9168221147747" y="687.1610895870679">com.example.demo.repositories.AppointmentRepository</node>
+    <node x="2468.2184488670355" y="668.983335130183">com.example.demo.AppointmentJpaUnitTest</node>
+    <node x="2335.4298421133826" y="351.61329315316704">com.example.demo.repositories.DoctorRepository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.demo.entities.Patient" target="com.example.demo.entities.Person" relationship="GENERALIZATION">
+      <point x="-3.9521167400380364E-4" y="62.00028799017798" />
+      <point x="4315.7" y="478.0" />
+      <point x="3920.132" y="478.0" />
+      <point x="3920.132" y="374.06" />
+      <point x="112.00029698431081" y="3.5521510454827876E-4" />
+    </edge>
+    <edge source="com.example.demo.AppointmentControllerUnitTest" target="com.example.demo.entities.Appointment" relationship="CREATE">
+      <point x="195.9995072458246" y="4.333540673542302E-4" />
+      <point x="4038.0" y="1072.35" />
+      <point x="4038.0" y="891.462" />
+      <point x="-198.99964487190482" y="-1.6918626215556287E-5" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Doctor" relationship="CREATE">
+      <point x="14.999965532538226" y="-94.00002750191209" />
+      <point x="4658.298" y="544.0" />
+      <point x="3715.132" y="544.0" />
+      <point x="1.589811909070704E-4" y="-62.00001158251007" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.repositories.AppointmentRepository" relationship="TO_ONE">
+      <point x="-117.00003446746177" y="-17.876027501912063" />
+      <point x="3950.132" y="681.275" />
+      <point x="3950.132" y="834.0" />
+      <point x="3007.417" y="834.0" />
+      <point x="1.7788522518458194E-4" y="48.99991041293208" />
+    </edge>
+    <edge source="com.example.demo.DoctorJpaUnitTest" target="com.example.demo.entities.Doctor" relationship="CREATE">
+      <point x="1.676741585470154E-4" y="94.00012214109188" />
+      <point x="2241.941" y="882.0" />
+      <point x="2450.718" y="882.0" />
+      <point x="2450.718" y="544.0" />
+      <point x="3715.132" y="544.0" />
+      <point x="1.589811909070704E-4" y="-62.00001158251007" />
+    </edge>
+    <edge source="com.example.demo.AppointmentControllerUnitTest" target="com.example.demo.entities.Patient" relationship="CREATE">
+      <point x="195.9995072458246" y="20.612433354067434" />
+      <point x="4781.0" y="1092.962" />
+      <point x="4781.0" y="17.0" />
+      <point x="4315.7" y="17.0" />
+      <point x="-3.9521167400380364E-4" y="-61.99971200982202" />
+    </edge>
+    <edge source="com.example.demo.PatientJpaUnitTest" target="com.example.demo.entities.Patient" relationship="CREATE">
+      <point x="-166.99990135950247" y="3.106735829732088E-4" />
+      <point x="4781.0" y="79.873" />
+      <point x="4781.0" y="17.0" />
+      <point x="4315.7" y="17.0" />
+      <point x="-3.9521167400380364E-4" y="-61.99971200982202" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.entities.Appointment" relationship="CREATE">
+      <point x="182.49955113296437" y="86.49966486981691" />
+      <point x="4038.0" y="849.483" />
+      <point x="4038.0" y="891.462" />
+      <point x="-198.99964487190482" y="-1.6918626215556287E-5" />
+    </edge>
+    <edge source="com.example.demo.RoomJpaUnitTest" target="com.example.demo.repositories.RoomRepository" relationship="TO_ONE">
+      <point x="-162.49969386968542" y="-1.1088617259247258E-4" />
+      <point x="1359.0" y="576.755" />
+      <point x="1359.0" y="804.0" />
+      <point x="1532.588" y="804.0" />
+      <point x="-4.974318910626607E-4" y="-70.99960524726771" />
+    </edge>
+    <edge source="com.example.demo.PatientControllerUnitTest" target="com.example.demo.repositories.PatientRepository" relationship="TO_ONE">
+      <point x="14.999915060866442" y="-83.000299872648" />
+      <point x="4544.162" y="48.0" />
+      <point x="4300.7" y="48.0" />
+      <point x="4300.7" y="275.0" />
+      <point x="4636.023" y="275.0" />
+      <point x="-3.1422798292624066E-4" y="-48.9999907796103" />
+    </edge>
+    <edge source="com.example.demo.controllers.DoctorController" target="com.example.demo.repositories.DoctorRepository" relationship="TO_ONE">
+      <point x="-7.10516487743007E-5" y="83.99963960176996" />
+      <point x="1980.488" y="494.0" />
+      <point x="2419.93" y="494.0" />
+      <point x="1.5788661721671815E-4" y="48.999706846832964" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Appointment" relationship="CREATE">
+      <point x="-117.00003446746177" y="-32.87602750191206" />
+      <point x="4038.0" y="666.275" />
+      <point x="4038.0" y="891.462" />
+      <point x="-198.99964487190482" y="-1.6918626215556287E-5" />
+    </edge>
+    <edge source="com.example.demo.AppointmentControllerUnitTest" target="com.example.demo.entities.Doctor" relationship="CREATE">
+      <point x="-4.927541754113918E-4" y="-148.99956664593253" />
+      <point x="3811.528" y="882.0" />
+      <point x="2450.718" y="882.0" />
+      <point x="2450.718" y="544.0" />
+      <point x="3715.132" y="544.0" />
+      <point x="1.589811909070704E-4" y="-62.00001158251007" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.repositories.AppointmentRepository" relationship="TO_ONE">
+      <point x="182.49955113296437" y="-3.351301830889497E-4" />
+      <point x="2876.417" y="762.983" />
+      <point x="2876.417" y="834.0" />
+      <point x="3007.417" y="834.0" />
+      <point x="1.7788522518458194E-4" y="48.99991041293208" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Doctor" relationship="TO_ONE">
+      <point x="-117.00003446746177" y="-47.87602750191206" />
+      <point x="4267.001" y="651.275" />
+      <point x="4267.001" y="621.0" />
+      <point x="4177.0" y="621.0" />
+      <point x="4177.0" y="640.5" />
+      <point x="112.5001589811909" y="13.724988417489953" />
+    </edge>
+    <edge source="com.example.demo.RoomControllerUnitTest" target="com.example.demo.repositories.RoomRepository" relationship="TO_ONE">
+      <point x="116.00042879573687" y="-3.7892949080742255E-5" />
+      <point x="961.144" y="749.075" />
+      <point x="961.144" y="804.0" />
+      <point x="1532.588" y="804.0" />
+      <point x="-4.974318910626607E-4" y="-70.99960524726771" />
+    </edge>
+    <edge source="com.example.demo.controllers.RoomController" target="com.example.demo.entities.Room" relationship="CREATE">
+      <point x="5.1834196483468986E-5" y="-83.99990625442831" />
+      <point x="1153.644" y="225.0" />
+      <point x="2673.311" y="225.0" />
+      <point x="-4.0771999692879035E-4" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.controllers.DoctorController" target="com.example.demo.entities.Doctor" relationship="CREATE">
+      <point x="23.504928948351107" y="83.99963960176996" />
+      <point x="2003.993" y="882.0" />
+      <point x="2450.718" y="882.0" />
+      <point x="2450.718" y="544.0" />
+      <point x="3715.132" y="544.0" />
+      <point x="1.589811909070704E-4" y="-62.00001158251007" />
+    </edge>
+    <edge source="com.example.demo.controllers.RoomController" target="com.example.demo.repositories.RoomRepository" relationship="TO_ONE">
+      <point x="175.00005183419648" y="9.374557168939646E-5" />
+      <point x="1359.0" y="686.153" />
+      <point x="1359.0" y="804.0" />
+      <point x="1532.588" y="804.0" />
+      <point x="-4.974318910626607E-4" y="-70.99960524726771" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.repositories.RoomRepository" relationship="TO_ONE">
+      <point x="14.99955113296437" y="93.99966486981691" />
+      <point x="2665.718" y="996.0" />
+      <point x="1359.0" y="996.0" />
+      <point x="1359.0" y="804.0" />
+      <point x="1532.588" y="804.0" />
+      <point x="-4.974318910626607E-4" y="-70.99960524726771" />
+    </edge>
+    <edge source="com.example.demo.controllers.PatientController" target="com.example.demo.entities.Patient" relationship="CREATE">
+      <point x="-155.49956388182545" y="-2.8475845908815245E-4" />
+      <point x="4781.0" y="438.36" />
+      <point x="4781.0" y="17.0" />
+      <point x="4315.7" y="17.0" />
+      <point x="-3.9521167400380364E-4" y="-61.99971200982202" />
+    </edge>
+    <edge source="com.example.demo.DoctorControllerUnitTest" target="com.example.demo.entities.Doctor" relationship="CREATE">
+      <point x="4.2202026975246554E-4" y="82.99953287374433" />
+      <point x="1880.993" y="882.0" />
+      <point x="2450.718" y="882.0" />
+      <point x="2450.718" y="544.0" />
+      <point x="3715.132" y="544.0" />
+      <point x="1.589811909070704E-4" y="-62.00001158251007" />
+    </edge>
+    <edge source="com.example.demo.RoomControllerUnitTest" target="com.example.demo.entities.Room" relationship="CREATE">
+      <point x="4.2879573686605E-4" y="-83.00003789294908" />
+      <point x="802.241" y="225.0" />
+      <point x="2673.311" y="225.0" />
+      <point x="-4.0771999692879035E-4" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.entities.Room" relationship="CREATE">
+      <point x="-4.488670356295188E-4" y="-94.00033513018309" />
+      <point x="2650.718" y="523.0" />
+      <point x="2532.5" y="523.0" />
+      <point x="2532.5" y="225.0" />
+      <point x="2673.311" y="225.0" />
+      <point x="-4.0771999692879035E-4" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.controllers.PatientController" target="com.example.demo.repositories.PatientRepository" relationship="TO_ONE">
+      <point x="4.3611817454802804E-4" y="-84.00028475845909" />
+      <point x="4956.374" y="275.0" />
+      <point x="4636.023" y="275.0" />
+      <point x="-3.1422798292624066E-4" y="-48.9999907796103" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.entities.Patient" relationship="CREATE">
+      <point x="112.59255113296467" y="-94.00033513018309" />
+      <point x="2763.311" y="17.0" />
+      <point x="4315.7" y="17.0" />
+      <point x="-3.9521167400380364E-4" y="-61.99971200982202" />
+    </edge>
+    <edge source="com.example.demo.entities.Doctor" target="com.example.demo.entities.Person" relationship="GENERALIZATION">
+      <point x="78.36815898119085" y="-62.00001158251007" />
+      <point x="3793.5" y="478.0" />
+      <point x="3920.132" y="478.0" />
+      <point x="3920.132" y="374.06" />
+      <point x="112.00029698431081" y="3.5521510454827876E-4" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.repositories.DoctorRepository" relationship="TO_ONE">
+      <point x="29.999965532538226" y="-94.00002750191209" />
+      <point x="4673.298" y="494.114" />
+      <point x="3935.132" y="494.114" />
+      <point x="3935.132" y="210.0" />
+      <point x="2778.311" y="210.0" />
+      <point x="2778.311" y="494.0" />
+      <point x="2419.93" y="494.0" />
+      <point x="1.5788661721671815E-4" y="48.999706846832964" />
+    </edge>
+    <edge source="com.example.demo.entities.Appointment" target="com.example.demo.entities.Patient" relationship="TO_ONE">
+      <point x="63.699355128094794" y="-184.00001691862622" />
+      <point x="4330.7" y="621.0" />
+      <point x="4497.0" y="621.0" />
+      <point x="4497.0" y="399.614" />
+      <point x="112.499604788326" y="2.8799017798064597E-4" />
+    </edge>
+    <edge source="com.example.demo.entities.Appointment" target="com.example.demo.entities.Room" relationship="TO_ONE">
+      <point x="199.00035512809518" y="-1.6918626215556287E-5" />
+      <point x="4497.0" y="891.462" />
+      <point x="4497.0" y="810.651" />
+      <point x="5226.424" y="810.651" />
+      <point x="5226.424" y="-31.626999999999995" />
+      <point x="2688.311" y="-31.626999999999995" />
+      <point x="14.999592280003071" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.repositories.PatientRepository" relationship="TO_ONE">
+      <point x="142.59255113296467" y="-94.00033513018309" />
+      <point x="2793.311" y="48.0" />
+      <point x="4300.7" y="48.0" />
+      <point x="4300.7" y="275.0" />
+      <point x="4636.023" y="275.0" />
+      <point x="-3.1422798292624066E-4" y="-48.9999907796103" />
+    </edge>
+    <edge source="com.example.demo.entities.Appointment" target="com.example.demo.entities.Doctor" relationship="TO_ONE">
+      <point x="3.551280951796798E-4" y="-184.00001691862622" />
+      <point x="4267.001" y="621.0" />
+      <point x="4177.0" y="621.0" />
+      <point x="4177.0" y="640.5" />
+      <point x="112.5001589811909" y="13.724988417489953" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.repositories.PatientRepository" relationship="TO_ONE">
+      <point x="94.72496553253859" y="-94.00002750191209" />
+      <point x="4738.023" y="275.0" />
+      <point x="4636.023" y="275.0" />
+      <point x="-3.1422798292624066E-4" y="-48.9999907796103" />
+    </edge>
+    <edge source="com.example.demo.DoctorJpaUnitTest" target="com.example.demo.repositories.DoctorRepository" relationship="TO_ONE">
+      <point x="166.00016767415855" y="1.221410918788024E-4" />
+      <point x="2430.0" y="637.307" />
+      <point x="2430.0" y="494.0" />
+      <point x="2419.93" y="494.0" />
+      <point x="1.5788661721671815E-4" y="48.999706846832964" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Appointment" relationship="TO_ONE">
+      <point x="-117.0" y="15.810989416714165" />
+      <point x="199.0" y="-176.5" />
+    </edge>
+    <edge source="com.example.demo.DoctorControllerUnitTest" target="com.example.demo.repositories.DoctorRepository" relationship="TO_ONE">
+      <point x="4.2202026975246554E-4" y="-83.00046712625567" />
+      <point x="1880.993" y="494.0" />
+      <point x="2419.93" y="494.0" />
+      <point x="1.5788661721671815E-4" y="48.999706846832964" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.repositories.DoctorRepository" relationship="TO_ONE">
+      <point x="-182.50044886703563" y="-3.351301830889497E-4" />
+      <point x="2430.0" y="762.983" />
+      <point x="2430.0" y="494.0" />
+      <point x="2419.93" y="494.0" />
+      <point x="1.5788661721671815E-4" y="48.999706846832964" />
+    </edge>
+    <edge source="com.example.demo.controllers.AppointmentController" target="com.example.demo.repositories.AppointmentRepository" relationship="TO_ONE">
+      <point x="3.0312601029436337E-4" y="-128.0003621790978" />
+      <point x="3333.73" y="834.0" />
+      <point x="3007.417" y="834.0" />
+      <point x="1.7788522518458194E-4" y="48.99991041293208" />
+    </edge>
+    <edge source="com.example.demo.AppointmentControllerUnitTest" target="com.example.demo.entities.Room" relationship="CREATE">
+      <point x="33.60350724582486" y="-148.99956664593253" />
+      <point x="3845.132" y="523.0" />
+      <point x="2532.5" y="523.0" />
+      <point x="2532.5" y="225.0" />
+      <point x="2673.311" y="225.0" />
+      <point x="-4.0771999692879035E-4" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.PatientControllerUnitTest" target="com.example.demo.entities.Patient" relationship="CREATE">
+      <point x="-8.493913355778204E-5" y="-83.000299872648" />
+      <point x="4529.162" y="17.0" />
+      <point x="4315.7" y="17.0" />
+      <point x="-3.9521167400380364E-4" y="-61.99971200982202" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Patient" relationship="TO_ONE">
+      <point x="-117.00003446746177" y="-62.87602750191206" />
+      <point x="4497.0" y="636.275" />
+      <point x="4497.0" y="399.614" />
+      <point x="112.499604788326" y="2.8799017798064597E-4" />
+    </edge>
+    <edge source="com.example.demo.RoomJpaUnitTest" target="com.example.demo.entities.Room" relationship="CREATE">
+      <point x="162.50030613031458" y="-1.1088617259247258E-4" />
+      <point x="1742.993" y="576.755" />
+      <point x="1742.993" y="523.0" />
+      <point x="2532.5" y="523.0" />
+      <point x="2532.5" y="225.0" />
+      <point x="2673.311" y="225.0" />
+      <point x="-4.0771999692879035E-4" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.PatientJpaUnitTest" target="com.example.demo.repositories.PatientRepository" relationship="TO_ONE">
+      <point x="9.864049752650317E-5" y="94.00031067358296" />
+      <point x="5041.924" y="275.0" />
+      <point x="4636.023" y="275.0" />
+      <point x="-3.1422798292624066E-4" y="-48.9999907796103" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Room" relationship="TO_ONE">
+      <point x="-117.00003446746177" y="-2.7501912086336233E-5" />
+      <point x="4497.0" y="699.151" />
+      <point x="4497.0" y="810.651" />
+      <point x="5226.424" y="810.651" />
+      <point x="5226.424" y="-31.626999999999995" />
+      <point x="2688.311" y="-31.626999999999995" />
+      <point x="14.999592280003071" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.AppointmentJpaUnitTest" target="com.example.demo.entities.Doctor" relationship="CREATE">
+      <point x="-4.488670356295188E-4" y="93.99966486981691" />
+      <point x="2650.718" y="882.0" />
+      <point x="2450.718" y="882.0" />
+      <point x="2450.718" y="544.0" />
+      <point x="3715.132" y="544.0" />
+      <point x="1.589811909070704E-4" y="-62.00001158251007" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Patient" relationship="CREATE">
+      <point x="116.99996553253823" y="-2.7501912086336233E-5" />
+      <point x="4781.0" y="699.151" />
+      <point x="4781.0" y="17.0" />
+      <point x="4315.7" y="17.0" />
+      <point x="-3.9521167400380364E-4" y="-61.99971200982202" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.entities.Room" relationship="CREATE">
+      <point x="-3.4467461773601826E-5" y="-94.00002750191209" />
+      <point x="4643.298" y="523.0" />
+      <point x="2532.5" y="523.0" />
+      <point x="2532.5" y="225.0" />
+      <point x="2673.311" y="225.0" />
+      <point x="-4.0771999692879035E-4" y="-61.99989256547562" />
+    </edge>
+    <edge source="com.example.demo.EntityUnitTest" target="com.example.demo.repositories.RoomRepository" relationship="TO_ONE">
+      <point x="-3.4467461773601826E-5" y="93.99997249808791" />
+      <point x="4643.298" y="1238.85" />
+      <point x="2097.0" y="1238.85" />
+      <point x="2097.0" y="996.0" />
+      <point x="1359.0" y="996.0" />
+      <point x="1359.0" y="804.0" />
+      <point x="1532.588" y="804.0" />
+      <point x="-4.974318910626607E-4" y="-70.99960524726771" />
+    </edge>
+    <edge source="com.example.demo.AppointmentControllerUnitTest" target="com.example.demo.repositories.AppointmentRepository" relationship="TO_ONE">
+      <point x="14.999507245824589" y="-148.99956664593253" />
+      <point x="3826.528" y="834.0" />
+      <point x="3007.417" y="834.0" />
+      <point x="1.7788522518458194E-4" y="48.99991041293208" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6447775720751117" showDependencies="true" x="2220.9030921585904" y="613.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
